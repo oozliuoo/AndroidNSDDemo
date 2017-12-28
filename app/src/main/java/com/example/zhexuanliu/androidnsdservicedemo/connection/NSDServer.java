@@ -1,6 +1,5 @@
 package com.example.zhexuanliu.androidnsdservicedemo.connection;
 
-import android.content.Context;
 import android.os.Handler;
 import android.util.Log;
 
@@ -11,14 +10,11 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
-import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import static android.R.attr.port;
 import static android.content.ContentValues.TAG;
 import static com.example.zhexuanliu.androidnsdservicedemo.commons.Constants.MSG_CLIENT_RECEIVE;
-import static com.example.zhexuanliu.androidnsdservicedemo.commons.Constants.YOU_ARE_CONNECTED;
 
 /**
  * Created by zhexuanliu on 12/26/17.
@@ -62,10 +58,13 @@ public class NSDServer
     private NSDServer mNSDServerContext;
 
     /**
-     * Socket after accepting
+     * Client socket after accepting
      */
-    private Socket mSocket;
+    private Socket mClient;
 
+    /**
+     * Output stream of the connected socket
+     */
     private OutputStream mOutputStream;
 
     /**
@@ -104,10 +103,10 @@ public class NSDServer
                 mMainThreadHandler.obtainMessage(Constants.MSG_SERVER_CREATED, mNSDServerContext).sendToTarget();
                 while (!Thread.currentThread().isInterrupted()) {
                     Log.d(TAG, "ServerSocket Created, awaiting connection");
-                    mSocket = mServerSocket.accept();
-                    Log.d(TAG, "Connected with" + mSocket.getInetAddress() + ":" + mSocket.getPort());
+                    mClient = mServerSocket.accept();
+                    Log.d(TAG, "Connected with" + mClient.getInetAddress() + ":" + mClient.getPort());
 
-                    mOutputStream = mSocket.getOutputStream();
+                    mOutputStream = mClient.getOutputStream();
                     sendMessage("Connected");
 
                     // start receiving
@@ -132,7 +131,7 @@ public class NSDServer
             BufferedReader input;
             try {
                 input = new BufferedReader(
-                        new InputStreamReader(mSocket.getInputStream())
+                        new InputStreamReader(mClient.getInputStream())
                 );
                 while (!Thread.currentThread().isInterrupted()) {
 
@@ -145,9 +144,6 @@ public class NSDServer
                         Log.d(Constants.LOG_TAG, "Client waiting for the message");
                     }
                 }
-                // mSocket.shutdownInput();
-                // input.close();
-
             } catch (IOException e) {
                 Log.e(Constants.LOG_TAG, "Server loop error: ", e);
             }
@@ -165,11 +161,6 @@ public class NSDServer
             PrintStream printStream = new PrintStream(mOutputStream);
             printStream.print(message + "\n");
             printStream.flush();
-
-            /*if (!mSocket.isOutputShutdown())
-            {
-                mSocket.shutdownOutput();
-            }*/
         }
         catch (Exception e)
         {

@@ -56,6 +56,11 @@ public class Constants {
     public static String YOU_ARE_CONNECTED = "You are connected with ";
 
     /**
+     * Size of a data buffer used in datapacket
+     */
+    public static int DATA_BUFFER_SIZE = 4096;
+
+    /**
      * Message for updating registered service
      */
     public static final int MSG_UPDATE_REGISTERED_SERVICE = 0;

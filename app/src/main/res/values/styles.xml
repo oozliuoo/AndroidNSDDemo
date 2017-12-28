@@ -29,8 +29,8 @@
 
     <style name="RegisteredListViewStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">100dp</item>
-        <item name="android:layout_weight">.50</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.33</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
@@ -38,8 +38,8 @@
 
     <style name="DiscoveredListViewStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">100dp</item>
-        <item name="android:layout_weight">.50</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">.33</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
@@ -48,7 +48,7 @@
     <style name="RegisterListTitle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">.50</item>
+        <item name="android:layout_weight">.33</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
@@ -57,7 +57,7 @@
     <style name="DiscoverListTitle">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_weight">.50</item>
+        <item name="android:layout_weight">.33</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
@@ -72,6 +72,13 @@
     <style name="sendButtonViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
+    </style>
+
+    <style name="MainActivityButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">.25</item>
+        <item name="android:layout_marginBottom">20dp</item>
     </style>
 
 </resources>
