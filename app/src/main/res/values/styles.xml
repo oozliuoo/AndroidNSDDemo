@@ -29,7 +29,7 @@
 
     <style name="RegisteredListViewStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_height">100dp</item>
         <item name="android:layout_weight">.50</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
@@ -38,7 +38,7 @@
 
     <style name="DiscoveredListViewStyle">
         <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">150dp</item>
+        <item name="android:layout_height">100dp</item>
         <item name="android:layout_weight">.50</item>
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
@@ -61,6 +61,17 @@
         <item name="android:layout_marginTop">10dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="sendMessageEditTextViewStyle">
+        <item name="android:textSize">12dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="sendButtonViewStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
     </style>
 
 </resources>

@@ -41,9 +41,19 @@ public class Constants {
     public static String SERVICE_NOT_DISCOVERED_PROMPT = "Service is not discovered yet";
 
     /**
+     * Toast message displayed when a service is not connected but user tried to send message
+     */
+    public static String SERVICE_NOT_CONNECTED_PROMPT = "Service is not connected yet";
+
+    /**
      * Toast message displayed when a service is connected successfully
      */
     public static String SERVICE_CONNECTED_PROMPT = "Service connected";
+
+    /**
+     * Message replied by server when a client is connected
+     */
+    public static String YOU_ARE_CONNECTED = "You are connected with ";
 
     /**
      * Message for updating registered service
@@ -59,4 +69,24 @@ public class Constants {
      * Message for connecting a service
      */
     public static final int MSG_CONNECTED_SERVICE = 2;
+
+    /**
+     * Message for successfully created a server
+     */
+    public static final int MSG_SERVER_CREATED = 3;
+
+    /**
+     * Message for client receiving message
+     */
+    public static final int MSG_CLIENT_RECEIVE = 4;
+
+    /**
+     * Message for client connected to server
+     */
+    public static final int MSG_CLIENT_CONNECTED = 5;
+
+    /**
+     * Message for sending a message
+     */
+    public static final int MSG_SEND_MESSAGE = 6;
 }
